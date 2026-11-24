@@ -1,0 +1,653 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\vv}{\nu_2}
+\newcommand{\NN}{\mathbb N}
+\title{An alternative proof of Ianakiev's\\
+shortest-palindrome conjecture\\
+via Fici and collaborators' Zimin-word theorem}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{November 19, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an alternative proof of both clauses of Ivan N.\ Ianakiev's
+August 20, 2019 conjecture in OEIS A094373 (revision 86, comment at
+export line 13) from the Zimin-word theorem of Fici, Gagie,
+K\"arkk\"ainen and Kempa (2014, Section 5, Lemma 12 and its proof) and the
+factorial-plateau identity of Kullmann and Zhao (2015, Lemma 3.11): the
+shortest nontrivial palindrome starting at position $i\ge2$ in the
+run-length sequence of A007843 has length $2^{\nu_2(i-1)+1}+1$.
+Equal endpoint valuations give the lower bound, and reflection about a
+multiple of a larger power of two attains it. Consequently, the complete
+first-occurrence list is $1,2,3,5,9,\ldots$, and the value $A(m)$ occurs
+at position $A(m-1)$ for every $m\ge2$.
+We also characterize every palindromic factor, transfer the same minima
+to divisor-power quotients, and deduce Ianakiev's four related assertions
+on A296306, crediting the earlier answers of Hasler and Bala.
+\end{abstract}
+
+\section{The question and its conventions}
+Ianakiev's comment on A094373 \cite{oeisA} begins with A007843, the least
+positive integer $h$ for which $2^m\mid h!$ \cite{oeisF}. Counting its
+maximal constant runs gives
+\[
+ B=1,1,2,1,3,1,2,1,4,1,2,1,3,1,2,1,5,\ldots.
+\]
+The comment then defines a third sequence by shortest palindromes of
+consecutive terms, with the exceptional value at position $1$ stipulated
+to be $1$. Its two conclusions are introduced by the word
+``Conjecturally'': ``the indices of the first occurrence of each value
+form the present sequence'', and, for $m>1$, $A(m)$ is at position
+$A(m-1)$ in the third sequence.
+The locator is the comment signed Ivan N.\ Ianakiev, August 20, 2019,
+line 13 of the A094373 sequence file in the November 14, 2026 export
+\cite{oeisA}. We keep the offset $0$ of A094373 and positive positions
+for $B$ and the third sequence.
+
+Fici, Gagie, K\"arkk\"ainen and Kempa \cite[Section 5, Lemma 12 and
+its proof]{fgkk} already describe all palindromic suffixes of prefixes
+of the infinite Zimin word. Their 2014 result implies the prescribed-start
+minimum below by reversal inside a sufficiently long palindromic prefix;
+we give the reduction explicitly after the elementary proof.
+The bridge from factorial minima to the ruler sequence is also classical:
+Kullmann and Zhao \cite[Lemma 3.11 and Example 3.7]{kz} identify the
+positive plateaus and explicitly discuss the different value at exponent
+zero. Li \cite[Section 4, Fact 2 and Proposition 2]{li} uses the
+same valuation reflection and describes palindromic factors; his main
+quantity is the number of palindromes in a factorization of a prefix,
+not the length of the shortest factor beginning at a prescribed position.
+Here the endpoint spacing gives a short alternative derivation of the
+minimum needed for Ianakiev's two conclusions. The earlier Zimin-word
+structure, the elementary deduction, and the divisor-sum consequences
+are distinguished throughout.
+
+Write $\NN_0=\{0,1,2,\ldots\}$ and let $\vv(n)$, for $n\ge1$, be the
+largest $k\in\NN_0$ such that $2^k\mid n$. Define
+\[
+ F(m)=\min\{h\ge1:2^m\mid h!\}\quad(m\in\NN_0).
+\]
+Let $S(0)=0$, and let $S(r+1)$ be the smallest $m>S(r)$ with
+$F(m)\ne F(S(r))$. Set $B(i)=S(i)-S(i-1)$ for $i\ge1$.
+The existence of these boundaries follows in Lemma~\ref{plateaus}.
+For $i\ge2$, define
+\[
+ P(i)=\min\{L\ge2:B(i+t)=B(i+L-1-t)\text{ for all }0\le t<L\},
+ \qquad P(1)=1.
+\]
+Theorem~\ref{main} proves that this minimum exists. Finally, put
+\[
+ A(0)=1,\qquad A(m)=2^{m-1}+1\quad(m\ge1).
+\]
+Here ``first occurrence at $i$'' means $P(j)\ne P(i)$ for every
+$1\le j<i$. A palindrome is always contiguous; the stipulated $P(1)$
+is not a minimum over lengths at least two.
+
+\section{Shortest palindromes and first occurrences}
+\begin{theorem}\label{main}
+All the above minima exist. For every $i\ge2$,
+\begin{equation}\label{minimum}
+ P(i)=2^{\vv(i-1)+1}+1.
+\end{equation}
+The sequence $A$ is strictly increasing, and for every $i\ge1$,
+\begin{equation}\label{first}
+ P(i)\text{ first occurs at }i
+ \quad\Longleftrightarrow\quad i=A(m)\text{ for some }m\in\NN_0.
+\end{equation}
+Moreover,
+\begin{equation}\label{position}
+ P(A(m-1))=A(m)\qquad(m\ge2).
+\end{equation}
+\end{theorem}
+
+\begin{lemma}\label{plateaus}
+We have $F(0)=1$, $B(1)=1$, and, for every $r\ge1$,
+\begin{equation}\label{ruler}
+ B(r+1)=1+\vv(r).
+\end{equation}
+More precisely, writing $V(h)=\vv(h!)$ for $h\ge1$ and $V(0)=0$,
+\begin{equation}\label{boundary}
+ S(r+1)=V(2r)+1,\qquad F(S(r+1))=2(r+1)\quad(r\ge0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The minimum defining $F(m)$ exists, since $h=2^m$ is admissible.
+For $m\ge1$, $F(m)=h$ exactly when
+\[
+ V(h-1)<m\le V(h).
+\]
+The identity $V(h)-V(h-1)=\vv(h)$ shows that an odd $h>1$ never
+occurs, while $h=2r$, $r\ge1$, occurs for exactly $\vv(2r)$
+successive positive exponents. The sequence $V(2r)$ is strictly
+increasing and unbounded, because every even factor contributes at
+least one. Thus these intervals cover all positive exponents, in order.
+At exponent zero, $F(0)=1$; it is a singleton run since $F(1)=2$.
+The next runs have values $2,4,6,\ldots$ and respective lengths
+$\vv(2r)=1+\vv(r)$, $r\ge1$. Their starts are precisely
+$V(2r)+1$, proving \eqref{boundary} and \eqref{ruler}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+Fix $i\ge2$, and write $j=i-1=2^k u$, where $k=\vv(j)$ and $u$ is
+positive and odd. Put $q=2^k$.
+If a palindrome starting at $i$ has length $L\ge2$, its equal endpoint
+values, together with \eqref{ruler}, imply
+\[
+ \vv(j+L-1)=\vv(j)=k.
+\]
+Therefore $j+L-1=qv$ for an odd integer $v>u$. Distinct odd integers
+differ by at least two, so
+\[
+ L-1=q(v-u)\ge2q.
+\]
+This proves the lower bound $L\ge2q+1$.
+
+To attain it, let $c=j+q=q(u+1)$. Then $2^{k+1}\mid c$.
+For $1\le s\le q$, we have $\vv(s)\le k<\vv(c)$ and $c-s>0$.
+If $a=\vv(s)$, write $s=2^a w$ with $w$ odd and $c=2^{a+1}z$.
+The integers $2z-w$ and $2z+w$ are odd, hence
+\[
+ \vv(c-s)=a=\vv(c+s).
+\]
+The equality also holds at $s=0$. Thus the valuation word on
+$[j,j+2q]=[c-q,c+q]$ is symmetric. By \eqref{ruler}, the block
+$B(i),\ldots,B(i+2q)$ is a palindrome. This proves both the existence
+of the minimum and \eqref{minimum}.
+
+The value $1$ occurs only at position $1$. For each $k\ge0$, formula
+\eqref{minimum} shows that the value $2^{k+1}+1$ occurs precisely when
+$\vv(i-1)=k$. The least positive integer of valuation $k$ is $2^k$,
+so its first occurrence is $i=2^k+1$. These positions, together with
+$1$, are exactly $A(0),A(1),A(2),\ldots$, in strictly increasing order.
+This proves \eqref{first}. Finally, for $m\ge2$,
+\[
+ A(m-1)-1=2^{m-2},\qquad
+ P(A(m-1))=2^{m-1}+1=A(m),
+\]
+which proves \eqref{position}. At $m=1$ the identity would read
+$P(1)=2$, so its stated lower bound is essential.
+\end{proof}
+
+\begin{corollary}\label{classes}
+For $k\ge0$, the complete occurrence class of $2^{k+1}+1$ is
+\[
+ \{i\ge2:P(i)=2^{k+1}+1\}
+   =\{1+2^k(2t+1):t\in\NN_0\}.
+\]
+Its number of occurrences in $2\le i\le N$, for $N\ge1$, is
+\[
+ \left\lfloor\frac{N-1}{2^k}\right\rfloor
+ -\left\lfloor\frac{N-1}{2^{k+1}}\right\rfloor,
+\]
+and its natural density among positive positions is $2^{-k-1}$.
+\end{corollary}
+\begin{proof}
+An integer has valuation $k$ exactly when it is divisible by $2^k$
+and not by $2^{k+1}$. Apply \eqref{minimum}, count these multiples up
+to $N-1$, and divide by $N$ before taking the limit.
+\end{proof}
+
+The displayed prefix of $P$ is consequently
+\[
+ 1,3,5,3,9,3,5,3,17,3,5,3,9,3,5,3,33,\ldots,
+\]
+as in Ianakiev's comment.
+
+\subsection{All factors and the earlier Zimin-word theorem}
+Set $R(n)=1+\vv(n)$ for $n\ge1$. This is the infinite Zimin word,
+whose finite prefixes satisfy $Z_0$ empty and $Z_h=Z_{h-1}\,h\,Z_{h-1}$.
+Indeed $R(2^{h-1})=h$, and reflection gives the two identical halves.
+
+\begin{corollary}\label{allfactors}
+There are no even-length palindromes in $R$. For integers $c>d\ge0$,
+the factor $R(c-d),\ldots,R(c+d)$ is a palindrome exactly when
+\[
+ d<2^{\vv(c)}.
+\]
+Consequently, a prefix of length $N\ge1$ has exactly $s_2(N)$
+palindromic suffixes, where $s_2(N)$ counts the ones in the binary
+expansion of $N$. If its set-bit positions are $b_1<\cdots<b_s$,
+their lengths are
+\begin{equation}\label{suffixset}
+ \left\{1+2\sum_{h=1}^{t}2^{b_h}:0\le t<s\right\}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The two middle letters of an even-length factor are unequal, since one
+index is odd and the other even. Put $q=2^{\vv(c)}$.
+For $0<s<q$, the valuation calculation in Theorem~\ref{main} gives
+$\vv(c-s)=\vv(c+s)=\vv(s)$, so every radius $d<q$ works.
+If $d\ge q$, positivity forces $c>q$. Writing $c=qu$ with $u\ge3$
+odd, the two even numbers $u-1,u+1$ have different valuations: one is
+divisible by $4$ and the other is not. Hence $R(c-q)\ne R(c+q)$.
+
+A suffix centered at $c\le N$ has radius $N-c$ and is palindromic
+exactly when $N-c<2^{\vv(c)}$. Writing $c=2^b u$ with $u$ odd,
+this means that $c$ is the binary truncation of $N$ immediately after
+a set bit at position $b$: the discarded lower bits form $N-c<2^b$.
+Each set bit gives one such $c$, its radius is the sum of all lower
+set bits, and \eqref{suffixset} follows. This is the suffix description
+in the proof of Fici et al.'s Lemma 12 \cite{fgkk}.
+\end{proof}
+
+For completeness, the earlier suffix description alone yields
+\eqref{minimum}. Fix a ruler-word start $j\ge1$, put $k=\vv(j)$,
+and choose a power of two $T>j+2^{k+1}$. The prefix $R[1,T-1]$ is
+palindromic. Reversal maps factors starting at $j$ to suffixes ending
+at $N=T-j$. Here $\vv(N)=k$ and $N>2^{k+1}$, so $N$ has at least
+two set bits. Formula~\eqref{suffixset} gives the smallest suffix length
+greater than one as $1+2^{k+1}$. The window contains that factor and
+every shorter candidate. Since $B(i)=R(i-1)$ for $i\ge2$, the
+factorial bridge completes the deduction of both OEIS clauses.
+
+The radius criterion also supplies a precise replacement for the
+odd-length converse printed in Li's Lemma 2 \cite{li}. That converse
+is false as written: in Li's zero-based alphabet,
+\[
+ (\vv(2),\vv(3),\vv(4))=(1,0,2)
+\]
+is not a palindrome despite its odd length.
+Corollary~\ref{allfactors} gives both necessity and
+sufficiency; Li's Fact 2 remains a valid reflection ingredient.
+
+\begin{corollary}\label{rulersiblings}
+For $h\ge2$, the prefix of $R$ immediately preceding its first $h$
+is a palindrome. A value $h\ge1$ occurs precisely at
+$2^{h-1}(2t+1)$, $t\ge0$. For $N\ge1$,
+\[
+ \sum_{n=1}^N R(n)=2N-s_2(N),\qquad
+ \sum_{n\ge1}R(n)x^n=\sum_{t\ge0}\frac{x^{2^t}}{1-x^{2^t}}.
+\]
+Moreover $R(n)$ is the least positive integer absent from
+\[
+ \{R(i):1\le i<n,\ R(i)=R(n-i)\}.
+\]
+The word $R$ is square-free and lexicographically least among infinite
+square-free words on the positive integers. Equivalently, it is the
+lexicographically least word whose every nonempty prefix has curling
+number one, where the curling number is the largest exponent of a
+nonempty repeated suffix block.
+\end{corollary}
+\begin{proof}
+The prefix has center $2^{h-2}$ and radius $2^{h-2}-1$, so
+Corollary~\ref{allfactors} proves Adamson's 2008 observation
+\cite{oeisR}. The occurrence class follows from the valuation.
+Since $R(n)=\sum_{t\ge0}[2^t\mid n]$, counting multiples proves
+the generating function. If $N=\sum_b\epsilon_b2^b$, then
+$\sum_{t\ge1}\lfloor N/2^t\rfloor=\sum_b\epsilon_b(2^b-1)
+=N-s_2(N)$; adding $N$ proves the sum identity.
+Finally let $k=\vv(n)$. Equal valuations of $i$ and $n-i$ must
+be strictly below $k$. Conversely, each $0\le t<k$ is obtained by
+$i=2^t$, $n-i>0$. Thus the coincidence values are exactly
+$1,\ldots,k$, proving the least-excluded-value statements of
+Sigrist--Song (2022) and Tolunsky (2023) in A001511 \cite{oeisR}.
+Every finite interval of indices has a unique maximum valuation:
+two occurrences of a maximum $k$ would enclose a multiple of $2^{k+1}$.
+A square (two consecutive equal nonempty words) would duplicate its
+maximum, so $R$ is square-free. If a smaller positive letter $t+1$
+were used at position $n$ where $t<\vv(n)$, the last $2^{t+1}$
+letters would become two identical blocks of length $2^t$:
+their final letters would both be $t+1$, and their earlier letters
+agree by reflection modulo $2^t$. Thus no lexicographically smaller
+square-free continuation exists. A repeated suffix of exponent at
+least two contains a square, and any square is a suffix of some prefix,
+proving the curling assertion. These are the statements recorded by
+Kimberling (2013) and Shannon (2026) \cite{oeisR}; the earlier
+square-free proof is Guay-Paquet--Shallit (2009), Section 5
+\cite{guayShallit}, followed by Berera et al.\ (2022)
+\cite{squarefree}.
+\end{proof}
+
+\begin{corollary}\label{divisors}
+For $n\ge1$ and an integer $a\ge0$, let $O_a(n)$ and $E_a(n)$ be
+the sums of the $a$th powers of its odd and even positive divisors,
+respectively, and set $Q_a(n)=(O_a(n)+E_a(n))/O_a(n)$.
+Writing $t=\vv(n)$ gives
+\begin{equation}\label{divisorformula}
+ Q_a(n)=\sum_{u=0}^t2^{au},\qquad
+ \frac{E_a(n)}{O_a(n)}=\sum_{u=1}^t2^{au}.
+\end{equation}
+All these quotients are integers. For every $a\ge0$, $Q_a$ has
+exactly the same palindromic factors as $R$, at the same positions.
+Its shortest nontrivial palindrome starting at $j\ge1$ therefore
+has length $2^{\vv(j)+1}+1$.
+
+In particular, A296306 is $Q_2(n)=(4^{R(n)}-1)/3$.
+Its distinct values are $(4^h-1)/3$, first attained at $2^{h-1}$,
+for $h\ge1$; its prefix of length $2^h-1$ is palindromic; and
+\begin{equation}\label{qsum}
+ \sum_{n=1}^{2^h-1} Q_2(n)
+ =\frac{(2^h-1)(2^{h+1}-1)}{3}\quad(h\ge1).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Write $n=2^t v$ with $v$ odd. Every divisor has the unique form
+$2^u e$, $0\le u\le t$, $e\mid v$. Summing separately over
+$u=0$ and $u\ge1$ proves \eqref{divisorformula}, including $t=0$
+and $a=0$. This is Hasler's 2020 answer to A296306 Conjecture 1
+\cite{oeisQ}; the even/odd form is proved independently in Fried's
+2025 note \cite{fried}. For fixed $a\ge0$, the sum in
+\eqref{divisorformula} is strictly increasing in $t$, so replacing
+$R(n)=t+1$ by $Q_a(n)$ preserves equality of letters and hence
+every palindrome. The occurrence and prefix assertions follow.
+For the sum, interchange finite sums to obtain
+\[
+ \sum_{n=1}^{2^h-1}Q_2(n)
+ =\sum_{u=0}^{h-1}4^u(2^{h-u}-1)
+ =2^h(2^h-1)-\frac{4^h-1}{3},
+\]
+which equals \eqref{qsum}. These give all four conjectures in
+Ianakiev's January 29, 2020 A296306 comment. Radcliffe's 2017
+formula already implies Conjecture 2; Hasler explicitly answered
+Conjectures 1 and 3 in 2020; Bala recorded an answer to
+Conjecture 4 in September 2026 \cite{oeisQ}. The transfer of the
+prescribed-start minimum to every $Q_a$ is a consequence not posed
+in either entry.
+\end{proof}
+
+\section{Elementary sequence consequences}
+\begin{corollary}\label{sequenceidentities}
+The closed form for $A$ was recorded by Jackson before Ianakiev's
+comment \cite{oeisA}; it is part of the definition here, rather than
+a new sequence formula. Summing its geometric part gives
+\begin{equation}\label{gf}
+ \sum_{m\ge0}A(m)x^m
+ =1+\frac{x}{1-x}+\frac{x}{1-2x}
+ =\frac{1-x-x^2}{(1-x)(1-2x)},\qquad
+ \sum_{m=0}^n A(m)=2^n+n\quad(n\ge0).
+\end{equation}
+The same formula gives
+\[
+ \begin{gathered}
+ A(n)=2A(n-1)-1\quad(n\ge2),\\
+ A(n)=3A(n-1)-2A(n-2)\quad(n\ge3),\\
+ A(2n)=2A(2n-1)-1\quad(n\ge1),\\
+ \sum_{n\ge0}\frac{A(n)}{n!}x^n
+  =e^x+\tfrac12e^{2x}-\tfrac12=e^x(1+\sinh x).
+ \end{gathered}
+\]
+The sequence is complete: every nonnegative integer is a sum of distinct
+terms of $A$.
+\end{corollary}
+\begin{proof}
+Summing the geometric part gives \eqref{gf} and the exponential
+generating function. Substitution proves the first and third recurrences
+and the inequality. The second recurrence follows by multiplying the generating
+function by $1-3x+2x^2$; it does not extend to $n=2$.
+For completeness, the term $A(0)=1$
+represents $0$ and $1$ by subset sums. If the first $n+1$ terms represent
+every integer from $0$ to $S_n=2^n+n$, adjoining
+$A(n+1)=2^n+1\le S_n+1$ joins the intervals
+$[0,S_n]$ and $[A(n+1),A(n+1)+S_n]$ without a gap. Induction and
+$S_n\to\infty$ give the assertion.
+\end{proof}
+
+\begin{corollary}\label{encodings}
+The binomial transform of $A$ is $2^n+(3^n-1)/2$ for $n\ge0$.
+Its inverse binomial transform has value $1$ at zero, $1$ at odd
+indices and $0$ at positive even indices. The row sums of the
+Pascal triangle augmented by an initial column of ones, the row
+lengths in A198069, column $1$ of A152977, and row $2$ of A238016
+all give $A$, with the offsets specified in those entries.
+The formal continued fraction $G(k)$ in A094373 satisfies
+\[
+ G(k)=\frac{1}{1-x}+\frac{2^k x}{1-2x},\qquad G(0)=\sum_{n\ge0}A(n)x^n.
+\]
+\end{corollary}
+\begin{proof}
+Write $A(n)=1+2^{n-1}-[n=0]/2$. The binomial theorem gives the
+transform, and binomial inversion gives $[n=0]+[n\text{ odd}]$.
+The augmented Pascal row $n\ge1$ sums to $1+2^{n-1}$;
+row zero is a singleton. Row $n\ge1$ of A198069 has indices
+$0\le k\le2^{n-1}$, hence this same length. Partitions of $2^n$
+into ones and twos number $\lfloor2^n/2\rfloor+1=A(n)$;
+this proves both array claims \cite{oeisArrays}. In the continued
+fraction, cancel $x$ in
+$1-x/(x+2^kx/G(k+1))$ to obtain
+$G(k)=1+2^kx+xG(k+1)$. Iterating determines each coefficient
+after finitely many steps and gives the displayed sum.
+\end{proof}
+
+The elephant-walk interpretation in A094373 also follows directly.
+Use the $3\times3$ bishop graph of A175654 \cite{oeisElephant},
+but let the center have one outgoing edge to a chosen side square;
+these are its four vectors with decimal values $2,8,32,128$.
+Every side square has two outgoing side neighbors, so the number
+of length-$n$ walks from a side is $2^n$. From the center it is
+$1$ for $n=0$ and $2^{n-1}$ for $n\ge1$. Each corner has one
+outgoing edge to the opposite corner and one to the center. Thus
+its walk count $C_n$ satisfies $C_0=1$, $C_1=2$ and
+$C_{n+1}=C_n+2^{n-1}$ for $n\ge1$. It follows that $C_n=A(n)$.
+This proves Meijer's four-vector statement, with the center counts
+giving its companion A011782.
+
+The inverse transform above is an algebraic statement. Its identification
+with the absolute values of the continued-fraction sequence A073097,
+also asserted in A094373, requires an additional continued-fraction
+argument and is not established here.
+
+\begin{corollary}\label{factorialidentities}
+As a formal power series,
+\[
+ \sum_{m\ge0}F(m)x^m
+ =1+\frac{2x}{1-x}\prod_{b\ge1}(1+x^{2^b-1}).
+\]
+For $i\ge0$ and $0\le r\le2^i-2$,
+$F(2^i+r)=2^i+F(r+1)$; at $r=2^i-1$ the value is $2^{i+1}$.
+For $m>1$, $F(m+1)=F(m)+2$ exactly when
+$m=2r-s_2(r)$ for an integer $r\ge1$.
+\end{corollary}
+\begin{proof}
+The jumps of $F$ have size $1$ at exponent $1$ and size $2$ at
+$V(2r)+1$ for $r\ge1$. Also
+$V(2r)=\sum_{u=1}^rR(u)=2r-s_2(r)$ by
+Corollary~\ref{rulersiblings}. If $r=\sum_b\epsilon_b2^b$, this is
+$\sum_b\epsilon_b(2^{b+1}-1)$. Thus
+$\sum_{r\ge0}x^{V(2r)}=\prod_{b\ge1}(1+x^{2^b-1})$;
+summing jumps proves the generating function recorded by Zudilin
+in A007843 \cite{oeisF}. For $i\ge1$ and $0\le u<2^i$,
+$V(2^i+u)=2^i-1+V(u)$, since $\vv(2^i+v)=\vv(v)$ for
+$0<v<2^i$. Inverting this identity at exponents $2^i+r$ gives
+Ryde's formula, including $F(2^{i+1}-1)=2^{i+1}$; the case
+$i=0$ is just $F(1)=2$. Finally the jump positions give Cloitre's
+conditional statement, with the indices $2r-s_2(r)$ forming
+A005187 \cite{oeisF,oeisArrays}.
+\end{proof}
+
+\section{Coverage and verification scope}
+
+\smallskip
+\noindent\small
+\begin{longtable}{@{}p{0.43\textwidth}p{0.53\textwidth}@{}}
+\toprule
+Source item & Coverage and mathematical support\\
+\midrule
+A094373, Ianakiev comment, clauses (1), (2), and displayed third sequence
+& Proved by deduction from earlier structure: Theorem~\ref{main};
+Fici et al.\ (2014), Lemma 12, plus Kullmann--Zhao (2015).
+The endpoint proof is an alternative derivation.\\
+Zimin-word suffix classification
+& Reproved; prior proof Fici et al.\ (2014), Lemma 12 and its proof:
+Corollary~\ref{allfactors}.\\
+A007843, repeated even values; A001511 ruler formula
+& Reproved; prior proof Kullmann--Zhao (2015), Lemmas 3.6 and 3.11.\\
+A094373, Jackson's closed form and completeness; generating functions,
+two-term recurrences and partial sums
+& Proved with attribution to the earlier statements:
+Corollary~\ref{sequenceidentities}; recurrence starts at $n=3$.\\
+A001511, Adamson's prefix-palindrome comment
+& Proved from earlier reflection structure; statement Adamson (2008):
+Corollary~\ref{rulersiblings}.\\
+A001511, occurrence classes, sums, generating function, coincidence
+least-excluded-value descriptions, square-free and curling descriptions
+& Proved with attribution to the entry's earlier statements:
+Corollary~\ref{rulersiblings}.\\
+A001511, Ianakiev's divisor-power conjecture
+& Reproved; earlier equivalent answer Hasler (2020), A296306;
+later independent proof Fried (2025), Theorem 1:
+Corollary~\ref{divisors}.\\
+A296306, Ianakiev Conjectures 1--4 (2020)
+& Proved: Corollary~\ref{divisors}; prior answers Hasler (2020),
+1 and 3; Radcliffe's earlier formula (2017), 2; Bala (2026), 4.\\
+All divisor-power quotients: same factors and shortest lengths
+& Not posed; proved: Corollary~\ref{divisors}, for every $a\ge0$.\\
+Li, literal odd-length converse in Lemma 2 (2020)
+& Refuted-and-corrected: $(1,0,2)$ is a counterexample;
+Corollary~\ref{allfactors} gives the exact radius criterion.\\
+A094373 binomial transform, array encodings and continued fraction
+& Proved: Corollary~\ref{encodings} and the walk-count deduction.
+The A073097 continued-fraction identification is not covered.\\
+A007843, Zudilin generating function, Ryde recursion and Cloitre jump
+condition; A005187 valuation formula
+& Proved with earlier attribution: Corollary~\ref{factorialidentities}.\\
+A007843, evenness and A046699 connection
+& Evenness proved in Lemma~\ref{plateaus}; meta-Fibonacci identification:
+prior proof cited, Kullmann--Zhao (2015), Theorem 3.16.
+With the current OEIS offset, $F(m)=2\,\mathrm{A046699}(m+1)$,
+$m\ge1$ \cite{oeisF}.\\
+A000051, Luschny permanent formula
+& Prior correction and proof cited: Fried (2025), Proposition 1
+and Theorem 1 \cite{friedPermanent}. The current entry already
+uses the corrected shift $-2$, rather than $-1$.\\
+Li's prefix-factorization and period-doubling questions
+& Not covered; they concern a different minimum.\\
+Other combinatorial encodings, arithmetic transforms and asymptotic
+questions in the cross-referenced entries
+& Not covered; none is described as open on the basis of this note.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean}{\texttt{IanakievShortestRulerPalindrome.lean}}
+contains the declaration \texttt{result} in the namespace
+\texttt{D5.S1.Words.Palindromes.IanakievShortestRulerPalindrome}.
+Its statement \texttt{claim} proves the existence and leastness of the
+factorial minima, successive run boundaries and palindrome minima,
+the stipulated $P(1)=1$, strict increase of $A$, the full equivalence
+\eqref{first} and the position identity \eqref{position}.
+The internal lemmas \texttt{b\_succ} and \texttt{p\_formula} give
+\eqref{ruler} and \eqref{minimum}, respectively.
+The helper lemmas are private declarations within that file.
+Corollaries~\ref{classes}--\ref{factorialidentities}, including the
+all-factor classification and divisor-quotient transfer, have the
+written proofs given here; they are not additional statements of
+\texttt{result}.
+
+The accompanying \texttt{verify.py} constructs exact factorial minima
+through exponent $4096$, checks their complete run lengths, and searches
+all candidate lengths up to the stated minimum at positions $2$ through
+$257$. It also checks first occurrences and the position identity
+through $m=9$, as well as the all-factor radius criterion, suffix-length
+sets, divisor-power quotients, A296306 assertions and the elementary
+sequence formulas. Exact ranges and counts are in
+\texttt{verification.json}. These integer computations supply examples
+and consistency checks; the unbounded conclusions follow from the proofs.
+
+\begin{thebibliography}{99}
+\bibitem{fgkk}
+G.~Fici, T.~Gagie, J.~K\"arkk\"ainen and D.~Kempa,
+\emph{A subquadratic algorithm for minimum palindromic factorization},
+Journal of Discrete Algorithms \textbf{28} (2014), 41--48,
+\href{https://doi.org/10.1016/j.jda.2014.08.001}{doi:10.1016/j.jda.2014.08.001}.
+The version containing Section 5, Lemma 12 and its proof is
+\href{https://arxiv.org/abs/1403.2431v2}{arXiv:1403.2431v2},
+August 7, 2014, p.~10.
+
+\bibitem{oeisA}
+The OEIS Foundation Inc., \emph{A094373: Expansion of
+$(1-x-x^2)/((1-x)(1-2x))$}.
+Comment by Ivan N.\ Ianakiev, August 20, 2019; closed-form and
+completeness comment by Frank M Jackson, January 29, 2012.
+\href{https://github.com/oeis/oeisdata/blob/49db7744e1fdbefbe376d1d018370c017d4c288b/seq/A094/A094373.seq#L13}{Sequence export, November 14, 2026},
+\url{https://oeis.org/A094373}.
+
+\bibitem{oeisF}
+The OEIS Foundation Inc., \emph{A007843: Least positive integer $k$
+for which $2^n$ divides $k!$}, revision 89, October 19, 2026.
+\url{https://oeis.org/A007843}.
+
+\bibitem{kz}
+O.~Kullmann and X.~Zhao, \emph{Parameters for minimal unsatisfiability:
+Smarandache primitive numbers and full clauses},
+arXiv:1505.02318v2, July 8, 2015, Section 3.2, especially
+Example 3.7 and Lemma 3.11.
+\url{https://arxiv.org/abs/1505.02318v2}.
+
+\bibitem{li}
+S.~Li, \emph{Palindromic length sequence of the ruler sequence and of
+the period-doubling sequence}, arXiv:2007.08317v1, July 16, 2020,
+Section 4, Fact 2, Lemma 2 and Proposition 2.
+\url{https://arxiv.org/abs/2007.08317v1}.
+
+\bibitem{oeisR}
+The OEIS Foundation Inc., \emph{A001511: The ruler function}.
+Prefix-palindrome comment by Gary W.\ Adamson, September 24, 2008;
+divisor-power conjecture by Ivan N.\ Ianakiev, July 6, 2019;
+settlement comment by Sela Fried, December 2, 2025.
+\url{https://oeis.org/A001511}.
+
+\bibitem{fried}
+S.~Fried, \emph{Proof of a conjecture stated in A001511}, 2025,
+Theorem 1, one-page note linked from A001511.
+\url{https://oeis.org/A001511/a001511.pdf}.
+
+\bibitem{oeisQ}
+The OEIS Foundation Inc., \emph{A296306: a(n) = A001157(n)/A050999(n)},
+revision 69, September 14, 2026. Radcliffe formula (December 11, 2017);
+Ianakiev Conjectures 1--4 (January 29, 2020); Hasler's answer
+(January 31, 2020); Bala's sum formula (September 11, 2026).
+\href{https://github.com/oeis/oeisdata/blob/49db7744e1fdbefbe376d1d018370c017d4c288b/seq/A296/A296306.seq#L7}{Pinned sequence text},
+\url{https://oeis.org/A296306}.
+
+\bibitem{oeisArrays}
+The OEIS Foundation Inc.,
+\href{https://oeis.org/A135225}{A135225} (augmented Pascal triangle),
+\href{https://oeis.org/A198069}{A198069} (gcd triangle),
+\href{https://oeis.org/A152977}{A152977} and
+\href{https://oeis.org/A238016}{A238016} (partition arrays),
+\href{https://oeis.org/A005187}{A005187} (factorial valuations),
+\href{https://oeis.org/A002450}{A002450} and
+\href{https://oeis.org/A006095}{A006095} (the values and prefix sums
+in A296306). Sequence texts, November 14, 2026 export.
+
+\bibitem{oeisElephant}
+The OEIS Foundation Inc., \emph{A175654: Eight bishops and one
+elephant on a $3\times3$ chessboard}, Meijer's adjacency-matrix
+construction and cross-references, and \emph{A011782: Coefficients
+of expansion of $(1-x)/(1-2x)$ in powers of $x$} (center walk counts).
+\url{https://oeis.org/A175654}, \url{https://oeis.org/A011782}.
+
+\bibitem{friedPermanent}
+S.~Fried, \emph{On sequence A000051}, linked from A000051 under
+the December 2, 2025 settlement comment. Proposition 1 and Theorem 1.
+\url{https://oeis.org/A000051/a000051_3.pdf}.
+
+\bibitem{squarefree}
+S.~Berera, A.~G\'omez-Colunga, J.~Lakerdas-Gayle, J.~L\'opez,
+M.~Matin, D.~Roebuck, E.~Rowland, N.~Scully and J.~Whidden,
+\emph{The lexicographically least square-free word with a given prefix},
+\url{https://arxiv.org/abs/2210.00508v2}, November 2, 2022,
+introduction.
+
+\bibitem{guayShallit}
+M.~Guay-Paquet and J.~Shallit,
+\emph{Avoiding squares and overlaps over the natural numbers},
+Discrete Mathematics \textbf{309} (2009), 6245--6254.
+\url{https://arxiv.org/abs/0901.1397v1}, January 12, 2009,
+Section 5, Theorem 1.
+\end{thebibliography}
+\bigskip
+\noindent\footnotesize
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0): \url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

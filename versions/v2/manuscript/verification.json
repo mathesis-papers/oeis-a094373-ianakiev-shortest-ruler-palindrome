@@ -1,0 +1,130 @@
+{
+  "status": "pass",
+  "arithmetic": "exact integers",
+  "factorial_exponents": [
+    0,
+    4096
+  ],
+  "complete_run_count": 2049,
+  "last_complete_run_position": 2049,
+  "palindrome_start_positions": [
+    2,
+    257
+  ],
+  "candidate_blocks_tested": 2560,
+  "attaining_reflected_pairs": 1280,
+  "first_occurrence_positions": [
+    1,
+    2,
+    3,
+    5,
+    9,
+    17,
+    33,
+    65,
+    129,
+    257
+  ],
+  "position_identity_indices": [
+    2,
+    9
+  ],
+  "occurrence_count_checks": 2313,
+  "ruler_prefix_heights": [
+    2,
+    10
+  ],
+  "sequence_identity_indices": [
+    0,
+    100
+  ],
+  "completeness_prefix_indices": [
+    0,
+    12
+  ],
+  "palindrome_prefix": [
+    1,
+    3,
+    5,
+    3,
+    9,
+    3,
+    5,
+    3,
+    17,
+    3,
+    5,
+    3,
+    9,
+    3,
+    5,
+    3,
+    33
+  ],
+  "sibling_checks": {
+    "all_factor_windows": 8192,
+    "factor_start_positions": [
+      1,
+      128
+    ],
+    "factor_lengths": [
+      1,
+      64
+    ],
+    "suffix_prefix_lengths": [
+      1,
+      256
+    ],
+    "divisor_quotient_checks": 768,
+    "divisor_inputs": [
+      1,
+      128
+    ],
+    "divisor_powers": [
+      0,
+      5
+    ],
+    "divisor_palindrome_powers": [
+      0,
+      3
+    ],
+    "divisor_palindrome_starts": [
+      1,
+      128
+    ],
+    "a296306_prefix_heights": [
+      1,
+      10
+    ],
+    "ruler_sum_and_coincidence_inputs": [
+      1,
+      512
+    ],
+    "square_tests": 16384,
+    "square_free_prefix_length": 256,
+    "binomial_transform_indices": [
+      0,
+      60
+    ],
+    "factorial_generating_function_degree": 128,
+    "factorial_recursion_dyadic_exponents": [
+      0,
+      7
+    ],
+    "factorial_jump_exponents": [
+      2,
+      512
+    ],
+    "continued_fraction_degree": 64,
+    "permanent_matrix_dimensions": [
+      1,
+      7
+    ],
+    "elephant_walk_lengths": [
+      0,
+      20
+    ],
+    "elephant_center_side_choices": 4
+  },
+  "scope": "Finite consistency checks; note.tex supplies written proofs or cited results for the unbounded statements."
+}

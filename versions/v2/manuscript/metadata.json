@@ -1,0 +1,23 @@
+{
+  "id": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+  "revision": 2,
+  "problem_ids": [
+    "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+  ],
+  "topic": "Both clauses of Ivan N. Ianakiev's conjecture on shortest contiguous palindromes in the factorial run-length sequence",
+  "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "We give an alternative proof of both clauses of Ivan N. Ianakiev's August 20, 2019 conjecture in OEIS A094373 (revision 86, comment at export line 13) from the Zimin-word theorem of Fici, Gagie, Kärkkäinen and Kempa (2014, Section 5, Lemma 12 and its proof) and the factorial-plateau identity of Kullmann and Zhao (2015, Lemma 3.11): the shortest nontrivial palindrome starting at position i>=2 in the run-length sequence of A007843 has length 2^(nu_2(i-1)+1)+1. Equal endpoint valuations give the lower bound, and reflection about a multiple of a larger power of two attains it. Consequently, the complete first-occurrence list is 1,2,3,5,9,..., and P(A(m-1))=A(m) for every m>=2. We also characterize every palindromic factor, transfer the same minima to divisor-power quotients, and deduce Ianakiev's four related assertions on A296306, crediting the earlier answers of Hasler and Bala.",
+  "summary": "An alternative endpoint proof and explicit deduction from FGKK's 2014 Zimin-word suffix classification and Kullmann–Zhao's plateau identity settle both A094373 clauses. Written corollaries cover all divisor-power quotients and the four A296306 assertions, crediting Hasler's 2020 answer and Fried's later independent proof. The finite checker covers all factor windows, divisor quotients and the stated elementary sequence identities.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+}

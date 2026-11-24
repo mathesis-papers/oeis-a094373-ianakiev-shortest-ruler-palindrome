@@ -1,0 +1,40 @@
+{
+  "generated_paths": [
+    "CHANGELOG.md",
+    "CITATION.cff",
+    "CONTRIBUTING.md",
+    "LICENSES/CC-BY-4.0.txt",
+    "README.md",
+    "formalization/nodes.json",
+    "manuscript/LICENSE",
+    "manuscript/README.md",
+    "manuscript/manifest.json",
+    "manuscript/metadata.json",
+    "manuscript/note.tex",
+    "manuscript/verification.json",
+    "manuscript/verify.py",
+    "paper.json",
+    "paper.pdf",
+    "source.archive"
+  ],
+  "generator_version": "0.1.0",
+  "sha256": {
+    "CHANGELOG.md": "8d12003e9a23748270b7eb19b4435abbd305d7c6daf5c1ab3f2b222aae7cc92c",
+    "CITATION.cff": "e18af383d86627467e33bd791ac7dd26f37eee567f584ad41ac21d051a63d827",
+    "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "README.md": "cf9bd34b3916aeecd5aee017a57ba76271f3f2ea129ba76fa50d7bb2e2d4516c",
+    "formalization/nodes.json": "a4c2f9c63f15ae5062925ffc0ac642b7616062a7cda0860472a8ef049fc3bf3b",
+    "manuscript/LICENSE": "76609734f925cdb1aefad63a506d7b22e7073d8e87fe4691f8998642de46e3a2",
+    "manuscript/README.md": "6d6ddc5ef76c790bb84e94d2bf60d191c8f6cfa5dc8fa0687e31a2f0a8ad95c5",
+    "manuscript/manifest.json": "3b6bfaeab07a6c52abc03fd1f87d98855255d1a9a6565ddbeeab2bd4891c9067",
+    "manuscript/metadata.json": "90c5ce440517e77abd12c71ae9e91b36faf6184d68457b6c57dd290fd2de97e2",
+    "manuscript/note.tex": "93a82c482161a94ffafcc56c0ad25cda895a61e2ee42caff16f6c15433cda9fd",
+    "manuscript/verification.json": "8b926d95dbc9108d6cfc285fe63fd6f7402916e6b1f4d47f3a99157f78e29050",
+    "manuscript/verify.py": "e347d072c7cf8593cbf880da64d8485e15e00e55d1aaa4cf426bccc9e67deb18",
+    "paper.json": "63015e53932a847cec51e16d5dd676abccef7e1918f5121ee915681445ae77c1",
+    "paper.pdf": "4ab41e5bf363a06ecc4f4bb0f96f526640831a080c7a6c9d8844273262ebc6b7",
+    "source.archive": "52247842ad275b17142e7c97deeb783225da8763d94a626ed4727e89b81be5bc"
+  },
+  "snapshot_identity": "8b3158d7af3c4a5b21c12cc8839de776bd54e1d51fe4fa3458a89db7aae3ed15"
+}

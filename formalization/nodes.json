@@ -1,0 +1,364 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s1",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "All the above minima exist. For every $i\\ge2$,\n\\begin{equation}\n P(i)=2^{\\vv(i-1)+1}+1.\n\\end{equation}\nThe sequence $A$ is strictly increasing, and for every $i\\ge1$,\n\\begin{equation}\n P(i)\\text{ first occurs at }i\n \\quad\\Longleftrightarrow\\quad i=A(m)\\text{ for some }m\\in\\NN_0.\n\\end{equation}\nMoreover,\n\\begin{equation}\n P(A(m-1))=A(m)\\qquad(m\\ge2).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s2",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "We have $F(0)=1$, $B(1)=1$, and, for every $r\\ge1$,\n\\begin{equation}\n B(r+1)=1+\\vv(r).\n\\end{equation}\nMore precisely, writing $V(h)=\\vv(h!)$ for $h\\ge1$ and $V(0)=0$,\n\\begin{equation}\n S(r+1)=V(2r)+1,\\qquad F(S(r+1))=2(r+1)\\quad(r\\ge0).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s3",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "For $k\\ge0$, the complete occurrence class of $2^{k+1}+1$ is\n\\[\n \\{i\\ge2:P(i)=2^{k+1}+1\\}\n   =\\{1+2^k(2t+1):t\\in\\NN_0\\}.\n\\]\nIts number of occurrences in $2\\le i\\le N$, for $N\\ge1$, is\n\\[\n \\left\\lfloor\\frac{N-1}{2^k}\\right\\rfloor\n -\\left\\lfloor\\frac{N-1}{2^{k+1}}\\right\\rfloor,\n\\]\nand its natural density among positive positions is $2^{-k-1}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s4",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "There are no even-length palindromes in $R$. For integers $c>d\\ge0$,\nthe factor $R(c-d),\\ldots,R(c+d)$ is a palindrome exactly when\n\\[\n d<2^{\\vv(c)}.\n\\]\nConsequently, a prefix of length $N\\ge1$ has exactly $s_2(N)$\npalindromic suffixes, where $s_2(N)$ counts the ones in the binary\nexpansion of $N$. If its set-bit positions are $b_1<\\cdots<b_s$,\ntheir lengths are\n\\begin{equation}\n \\left\\{1+2\\sum_{h=1}^{t}2^{b_h}:0\\le t<s\\right\\}.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s5",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "For $h\\ge2$, the prefix of $R$ immediately preceding its first $h$\nis a palindrome. A value $h\\ge1$ occurs precisely at\n$2^{h-1}(2t+1)$, $t\\ge0$. For $N\\ge1$,\n\\[\n \\sum_{n=1}^N R(n)=2N-s_2(N),\\qquad\n \\sum_{n\\ge1}R(n)x^n=\\sum_{t\\ge0}\\frac{x^{2^t}}{1-x^{2^t}}.\n\\]\nMoreover $R(n)$ is the least positive integer absent from\n\\[\n \\{R(i):1\\le i<n,\\ R(i)=R(n-i)\\}.\n\\]\nThe word $R$ is square-free and lexicographically least among infinite\nsquare-free words on the positive integers. Equivalently, it is the\nlexicographically least word whose every nonempty prefix has curling\nnumber one, where the curling number is the largest exponent of a\nnonempty repeated suffix block.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s6",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "For $n\\ge1$ and an integer $a\\ge0$, let $O_a(n)$ and $E_a(n)$ be\nthe sums of the $a$th powers of its odd and even positive divisors,\nrespectively, and set $Q_a(n)=(O_a(n)+E_a(n))/O_a(n)$.\nWriting $t=\\vv(n)$ gives\n\\begin{equation}\n Q_a(n)=\\sum_{u=0}^t2^{au},\\qquad\n \\frac{E_a(n)}{O_a(n)}=\\sum_{u=1}^t2^{au}.\n\\end{equation}\nAll these quotients are integers. For every $a\\ge0$, $Q_a$ has\nexactly the same palindromic factors as $R$, at the same positions.\nIts shortest nontrivial palindrome starting at $j\\ge1$ therefore\nhas length $2^{\\vv(j)+1}+1$.\n\nIn particular, A296306 is $Q_2(n)=(4^{R(n)}-1)/3$.\nIts distinct values are $(4^h-1)/3$, first attained at $2^{h-1}$,\nfor $h\\ge1$; its prefix of length $2^h-1$ is palindromic; and\n\\begin{equation}\n \\sum_{n=1}^{2^h-1} Q_2(n)\n =\\frac{(2^h-1)(2^{h+1}-1)}{3}\\quad(h\\ge1).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s7",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "The closed form for $A$ was recorded by Jackson before Ianakiev's\ncomment \\cite{oeisA}; it is part of the definition here, rather than\na new sequence formula. Summing its geometric part gives\n\\begin{equation}\n \\sum_{m\\ge0}A(m)x^m\n =1+\\frac{x}{1-x}+\\frac{x}{1-2x}\n =\\frac{1-x-x^2}{(1-x)(1-2x)},\\qquad\n \\sum_{m=0}^n A(m)=2^n+n\\quad(n\\ge0).\n\\end{equation}\nThe same formula gives\n\\[\n \\begin{gathered}\n A(n)=2A(n-1)-1\\quad(n\\ge2),\\\\\n A(n)=3A(n-1)-2A(n-2)\\quad(n\\ge3),\\\\\n A(2n)=2A(2n-1)-1\\quad(n\\ge1),\\\\\n \\sum_{n\\ge0}\\frac{A(n)}{n!}x^n\n  =e^x+\\tfrac12e^{2x}-\\tfrac12=e^x(1+\\sinh x).\n \\end{gathered}\n\\]\nThe sequence is complete: every nonnegative integer is a sum of distinct\nterms of $A$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s8",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "The binomial transform of $A$ is $2^n+(3^n-1)/2$ for $n\\ge0$.\nIts inverse binomial transform has value $1$ at zero, $1$ at odd\nindices and $0$ at positive even indices. The row sums of the\nPascal triangle augmented by an initial column of ones, the row\nlengths in A198069, column $1$ of A152977, and row $2$ of A238016\nall give $A$, with the offsets specified in those entries.\nThe formal continued fraction $G(k)$ in A094373 satisfies\n\\[\n G(k)=\\frac{1}{1-x}+\\frac{2^k x}{1-2x},\\qquad G(0)=\\sum_{n\\ge0}A(n)x^n.\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:2:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
+      },
+      "lineage": "collected:oeis-a094373-ianakiev-shortest-ruler-palindrome:s9",
+      "macros": {
+        "\\NN": "\\mathbb N",
+        "\\vv": "\\nu_2"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a094373-ianakiev-shortest-ruler-palindrome",
+      "scope": "in_scope",
+      "statement": "As a formal power series,\n\\[\n \\sum_{m\\ge0}F(m)x^m\n =1+\\frac{2x}{1-x}\\prod_{b\\ge1}(1+x^{2^b-1}).\n\\]\nFor $i\\ge0$ and $0\\le r\\le2^i-2$,\n$F(2^i+r)=2^i+F(r+1)$; at $r=2^i-1$ the value is $2^{i+1}$.\nFor $m>1$, $F(m+1)=F(m)+2$ exactly when\n$m=2r-s_2(r)$ for an integer $r\\ge1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
+    }
+  ]
+}
