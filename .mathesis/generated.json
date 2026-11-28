@@ -32,9 +32,9 @@
     "manuscript/note.tex": "93a82c482161a94ffafcc56c0ad25cda895a61e2ee42caff16f6c15433cda9fd",
     "manuscript/verification.json": "8b926d95dbc9108d6cfc285fe63fd6f7402916e6b1f4d47f3a99157f78e29050",
     "manuscript/verify.py": "e347d072c7cf8593cbf880da64d8485e15e00e55d1aaa4cf426bccc9e67deb18",
-    "paper.json": "acf0bc112007aed84dba5eb4cd765660733da6aa81ee63b74e591cf5f7fa630a",
+    "paper.json": "95b058cc297bf976a9070821189ec5b9235b58892ef026acb4c4bd68507332b4",
     "paper.pdf": "4ab41e5bf363a06ecc4f4bb0f96f526640831a080c7a6c9d8844273262ebc6b7",
     "source.archive": "52247842ad275b17142e7c97deeb783225da8763d94a626ed4727e89b81be5bc"
   },
-  "snapshot_identity": "2cf99adac4e5f27e48cf18ba9cb37944799d348aa315bd668cf3ea8005f5dd41"
+  "snapshot_identity": "2832002d65b760055a8c7801ce8a34bd2eff651073a210214da193a33e01cb5d"
 }

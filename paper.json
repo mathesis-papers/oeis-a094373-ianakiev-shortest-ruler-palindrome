@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24488705",
     "current_version": 2,
     "doi": "10.5281/zenodo.24488706",
+    "kind": "note",
     "lean_source": {
       "revision": "3afaecc5507038586e39d8775afe7c0df3d4fc48",
       "url": "https://github.com/the-omega-institute/trureturing/blob/3afaecc5507038586e39d8775afe7c0df3d4fc48/D5/S1/Words/Palindromes/IanakievShortestRulerPalindrome.lean"
@@ -55,10 +56,12 @@
     "title": "An alternative proof of Ianakiev's shortest-palindrome conjecture via Fici and collaborators' Zimin-word theorem",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-24T03:12:45.410500073Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "oeis-a094373-ianakiev-shortest-ruler-palindrome"
